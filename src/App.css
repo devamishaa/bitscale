@@ -1,0 +1,353 @@
+/* General Styling */
+.theme-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Button Styling */
+.theme-toggle-button {
+  position: relative;
+  width: 25px;
+  height: 15px;
+  background-color: #ccc;
+  /* Default white color */
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  /* Ensure the circle doesn't overflow */
+  margin: 8px;
+}
+
+/* When the button is toggled "ON", change the background to green */
+.theme-toggle-button.on {
+  background-color: #4caf50;
+  /* Green when toggled */
+}
+
+/* Circle inside the button */
+.toggle-circle {
+  position: absolute;
+  width: 12px;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the circle */
+}
+
+/* When the button is "OFF", the circle stays at the left */
+.toggle-circle.off {
+  transform: translate(-50%, -50%) translateX(0);
+  /* Left position */
+}
+
+/* When the button is "ON", the circle moves to the right but stays within bounds */
+.toggle-circle.on {
+  transform: translate(-50%, -50%) translateX(8px);
+  /* Right position */
+}
+
+/* styles.css */
+.table {
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  height: 25px;
+  /* Set a fixed height */
+  text-align: center;
+}
+
+.table th,
+.table td {
+  border: 1px solid lightgray;
+  padding: 2px;
+  text-align: center;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+
+/* Alternating row colors */
+.table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  /* Light gray for odd rows */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+  /* White for even rows */
+}
+
+/* Row hover effect */
+.table tbody tr:hover {
+  background-color: #d6eaff;
+  /* Light blue when hovering */
+}
+
+
+.sidebar img {
+  margin: 14px;
+  padding: 2px;
+}
+
+
+.data-table-container {
+  padding: 8px;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 4px 5px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f4f4f4;
+  /* display: flex;
+  align-items: center; */
+  /* padding: 0.6rem; */
+}
+
+.play-div{
+  display: flex;
+  align-items: center;
+}
+
+.header-highlight {
+  width: 20%;
+  background-color: #fef2c7 !important;
+}
+
+.badge {
+  background-color: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.icon {
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.play-button {
+  margin-left: auto;
+}
+
+.cell-auto {
+  width: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  border-right: 1px solid #E5E5E5;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.icon-group.gap-large {
+  gap: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-toggle-button {
+  width: 40px;
+  height: 20px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2px;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.theme-toggle-button.on {
+  background-color: #4caf50;
+  justify-content: flex-end;
+}
+
+.theme-toggle-button.off {
+  background-color: #ccc;
+}
+
+.toggle-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.auto-save-text {
+  font-weight: bold;
+  font-size: 14px;
+  color: gray;
+}
+
+.auto-save-text.on {
+  color: #4caf50;
+}
+
+.auto-save-text.off {
+  color: gray;
+}
+
+.header-icon {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  background-color: #feecdc;
+  border-radius: 50%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.search-input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-groups {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.right-group {
+  display: flex;
+  gap: 10px;
+}
+
+.enrich-button {
+  border: none;
+  background-color: #1f2a37;
+  color: white;
+  border-radius: 12px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.icon-button img,
+.enrich-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.button:hover, .enrich-button:hover, .icon-button:hover {
+  opacity: 0.8;
+}
