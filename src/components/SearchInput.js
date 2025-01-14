@@ -12,7 +12,6 @@ import deleteIcon from '../assets/deleteIcon.svg';
 const SearchBar = () => {
   return (
     <div className="search-bar">
-      {/* Search Input Section */}
       <div className="search-input-container">
         <FaSearch className="search-icon" />
         <input
