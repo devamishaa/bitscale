@@ -7,6 +7,91 @@
   transition: background-color 0.3s ease;
 }
 
+/*  Filename: ./components/ToggleSwitch.css*/
+
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  display: inline-block;
+  text-align: left;
+  top: 0px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.2s ease-in 0s;
+}
+
+.inner:before,
+.inner:after {
+  float: left;
+  width: 40px;
+  height: 20px;
+  padding: 0;
+  line-height: 36px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.inner:before {
+  content: "";
+  padding-left: 10px;
+  background-color: #060;
+  color: #fff;
+}
+
+.inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+
+.switch {
+  display: block;
+  width: 15px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.2s ease-in 0s;
+}
+
+.checkbox:checked+.label .inner {
+  margin-left: 0;
+}
+
+.checkbox:checked+.label .switch {
+  right: 0px;
+}
+
 
 /* Button Styling */
 .theme-toggle-button {
@@ -14,7 +99,6 @@
   width: 25px;
   height: 15px;
   background-color: #ccc;
-  /* Default white color */
   border-radius: 30px;
   border: none;
   cursor: pointer;
@@ -31,32 +115,6 @@
 .theme-toggle-button.on {
   background-color: #4caf50;
   /* Green when toggled */
-}
-
-/* Circle inside the button */
-.toggle-circle {
-  position: absolute;
-  width: 12px;
-  height: 13px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* Center the circle */
-}
-
-/* When the button is "OFF", the circle stays at the left */
-.toggle-circle.off {
-  transform: translate(-50%, -50%) translateX(0);
-  /* Left position */
-}
-
-/* When the button is "ON", the circle moves to the right but stays within bounds */
-.toggle-circle.on {
-  transform: translate(-50%, -50%) translateX(8px);
-  /* Right position */
 }
 
 /* styles.css */
@@ -109,7 +167,6 @@ td {
 
 
 .data-table-container {
-  padding: 8px;
   overflow-x: auto;
 }
 
@@ -133,7 +190,7 @@ td {
   /* padding: 0.6rem; */
 }
 
-.play-div{
+.play-div {
   display: flex;
   align-items: center;
 }
@@ -199,7 +256,7 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -221,33 +278,14 @@ td {
   gap: 15px;
 }
 
-.theme-toggle-button {
-  width: 40px;
-  height: 20px;
-  border: none;
-  border-radius: 20px;
+.rounded-avatar {
+  width: 30px;
+  height: 30px;
+  background: #FEECDC;
+  border-radius: 50px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  padding: 2px;
-  cursor: pointer;
-  background-color: #ccc;
-}
-
-.theme-toggle-button.on {
-  background-color: #4caf50;
-  justify-content: flex-end;
-}
-
-.theme-toggle-button.off {
-  background-color: #ccc;
-}
-
-.toggle-circle {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
 }
 
 .auto-save-text {
@@ -331,6 +369,8 @@ td {
   border-radius: 12px;
   padding: 5px 10px;
   display: flex;
+  width: 85px;
+  height: 34px;
   align-items: center;
   gap: 8px;
   cursor: pointer;
@@ -348,6 +388,26 @@ td {
   height: 20px;
 }
 
-.button:hover, .enrich-button:hover, .icon-button:hover {
+.button:hover,
+.enrich-button:hover,
+.icon-button:hover {
   opacity: 0.8;
+}
+
+.editable-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.editable-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.add-column-button{
+  cursor: pointer;
+  border: none;
 }

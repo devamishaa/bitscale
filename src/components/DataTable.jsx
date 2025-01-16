@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import playbutton from "../assets/playbutton.svg";
 import cologo from "../assets/cologo.svg";
 import play_circle from "../assets/play_circle.svg";
@@ -14,7 +14,7 @@ import Icon2 from "../assets/Icon2.svg";
 import Icon3 from "../assets/Icon3.svg";
 
 const DataTable = () => {
-  const data = [
+  const initialData = [
     {
       id: 1,
       col1: "Oct 12, 2024 at 14:08 PM",
@@ -50,9 +50,12 @@ const DataTable = () => {
   const images = [Logomark0, Logomark1, Logomark2, Logomark3, Logomark4];
   const icons = ["", Icon1, Icon2, Icon3, Icon3];
 
-  const numColumns = 6;
-  const numEmptyRows = 8;
+  const [data,] = useState(initialData);
 
+  const numColumns = 6;
+  const numEmptyRows = 18;
+
+ 
   return (
     <div className="data-table-container">
       <table className="data-table">
@@ -79,7 +82,9 @@ const DataTable = () => {
               </div>
             </th>
             <th>
-              <img src={addIcon} alt="addicon" className="icon" /> Add Column
+              <button className="add-column-button">
+                <img src={addIcon} alt="addicon" className="icon" /> Add Column
+              </button>
             </th>
           </tr>
         </thead>
@@ -120,8 +125,8 @@ const DataTable = () => {
                 {index !== 0 ? (
                   <div className="flex">
                     <img
-                      src={icons[index]}
-                      alt={`icons ${index}`}
+                      src={images[index]}
+                      alt={`images ${index}`}
                       className="icon"
                     />
                     {item.col2.includes("http") ? (
